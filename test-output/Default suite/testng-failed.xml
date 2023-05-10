@@ -5,8 +5,8 @@
     <classes>
       <class name="com.crm.qa.testcases.landingTest">
         <methods>
-          <include name="Lighticon"/>
-          <include name="Logotest"/>
+          <include name="waits"/>
+          <include name="Darkicon"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

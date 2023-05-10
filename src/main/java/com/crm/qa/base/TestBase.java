@@ -30,7 +30,7 @@ public class TestBase {
 
 	}
 
-	public static void initialization() {
+	public static void initialization() throws InterruptedException {
 		// read property of browser
 		String BrowserName = prop.getProperty("Browser");
 
@@ -45,9 +45,15 @@ public class TestBase {
 			driver = new FirefoxDriver();
 		}
 		
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_Load_Timeout, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtil.Implicit_Wait, TimeUnit.SECONDS);
+//		driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_Load_Timeout, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(TestUtil.Implicit_Wait, TimeUnit.SECONDS);
+		
 		driver.get(prop.getProperty("url"));
+		
+	
+		
+		
 	}
 
 }
+

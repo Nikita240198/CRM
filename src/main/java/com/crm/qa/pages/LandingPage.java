@@ -11,12 +11,22 @@ import com.crm.qa.base.TestBase;
 public class LandingPage extends TestBase {
 // Page Factory -OR
 
-	@FindBy(xpath = "//img[contains(@class,'App-logo')]")
+	@FindBy(xpath = "//img[@class='App-logo']")
 
 	WebElement Logo;
 
-	@FindBy(xpath = "//svg[@data-testid ='LightModeOutlinedIcon']")
+	@FindBy(xpath = " //*[contains(@data-testid,'LightModeOutlinedIcon')]")
 	WebElement Lighticon;
+	
+	@FindBy(xpath = "//*[@id='start']")
+	WebElement maindiv ;
+	
+	@FindBy(xpath="//*[contains(@data-testid,'DarkModeOutlinedIcon')]  ")
+	WebElement DarkMode;
+	
+	@FindBy(xpath = "//span[@class='shuffle-text']")
+	WebElement Access;
+	
 
 	public LandingPage() throws IOException {
 		super();
@@ -34,7 +44,23 @@ public class LandingPage extends TestBase {
 		return Logo.isDisplayed();
 	}
 
-	public void landing() {
+	public String landing() {
 		Lighticon.click();
+		return maindiv.getAttribute("class");
+		
 	}
+	
+
+	public String Darklanding() {
+		DarkMode.click();
+		return maindiv.getAttribute("class");
+	}
+	
+	
+	public void Accessgo() {
+		Access.click();
+		
+	}
+	
+	
 }
