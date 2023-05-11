@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.landingTest">
+      <class name="com.crm.qa.testcases.LoginTest">
         <methods>
-          <include name="waits"/>
-          <include name="Darkicon"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="waits"/>
+          <include name="getin"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.landingTest -->
+      </class> <!-- com.crm.qa.testcases.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

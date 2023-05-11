@@ -15,7 +15,7 @@ import com.crm.qa.ulitlity.TestUtil;
 public class TestBase {
 //basic initialisation,open browser,maximise window use inheritance and base class is parent class
 	public static WebDriver driver;
-	static Properties prop;
+	public static Properties prop;
 
 	public TestBase() throws IOException {
 //this is a constructor and constructor name is same as class name
@@ -36,7 +36,7 @@ public class TestBase {
 
 		if (BrowserName.equals("Chrome")) {
 
-			System.setProperty("webdriver.chrome.driver", "/Users/Mind/Downloads/chromedriver_mac64/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/Users/Mind/Downloads/Chromedriver/chromedriver_mac64 (1)/chromedriver");
 			driver = new ChromeDriver();
 			
 		}
