@@ -36,6 +36,8 @@ public class LandingPage extends TestBase {
 		PageFactory.initElements(driver, this);
 		// Pagefactoy.initelements() is a method
 	}
+	
+
 
 //Action 
 	
@@ -57,8 +59,9 @@ public class LandingPage extends TestBase {
 	}
 	
 	
-	public void Accessgo() {
+	public LoginPage Accessgo() throws IOException {
 		Access.click();
+		return new LoginPage();
 		
 	}
 	

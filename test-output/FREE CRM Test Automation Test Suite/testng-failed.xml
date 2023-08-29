@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [FREE CRM Test Automation Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Blinkly Test Cases(failed)">
+    <classes>
+      <class name="com.crm.qa.testcases.LoginTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="SelectSlider"/>
+          <include name="setUp"/>
+          <include name="waits"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.LoginTest -->
+      <class name="com.crm.qa.testcases.ComposeTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="send10Mail"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.ComposeTest -->
+    </classes>
+  </test> <!-- Blinkly Test Cases(failed) -->
+</suite> <!-- Failed suite [FREE CRM Test Automation Test Suite] -->

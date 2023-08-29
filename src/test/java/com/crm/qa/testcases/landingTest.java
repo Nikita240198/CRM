@@ -12,12 +12,14 @@ import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.LandingPage;
+import com.crm.qa.pages.LoginPage;
 
 import locators.Landing;
 
 public class landingTest extends TestBase {
 
 	LandingPage landings;
+	LoginPage loginPage;
 
 	public landingTest() throws IOException {
 		super();
@@ -30,6 +32,7 @@ public class landingTest extends TestBase {
 		TestBase.initialization();
 		// create object of login page class
 		landings = new LandingPage();
+		
 
 	}
 	
@@ -67,8 +70,8 @@ public class landingTest extends TestBase {
 	
 	
 	@Test(priority =4)
-	public void Goto() {
-		landings.Accessgo();
+	public void Goto() throws IOException {
+		loginPage=landings.Accessgo();
 	}
 	
 	

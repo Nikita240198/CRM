@@ -3,14 +3,10 @@ package com.crm.qa.base;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
-import com.crm.qa.ulitlity.TestUtil;
 
 public class TestBase {
 //basic initialisation,open browser,maximise window use inheritance and base class is parent class
@@ -24,9 +20,12 @@ public class TestBase {
 //	prop.load(ip);
 //	System.out.println(prop.get("Browser"));
 		prop = new Properties();
-		FileInputStream ip = new FileInputStream(
-				"/Users/Mind/eclipse-workspace/FreeCRMTest/src/main/java/com/crm/qa/config/config.properties");
-		prop.load(ip);
+		try (FileInputStream ip = new FileInputStream("/Users/Mind/eclipse-workspace/FreeCRMTest/src/main/java/com/crm/qa/config/config.properties")) {
+		    prop.load(ip);
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+
 
 	}
 
@@ -36,12 +35,15 @@ public class TestBase {
 
 		if (BrowserName.equals("Chrome")) {
 
-			System.setProperty("webdriver.chrome.driver", "/Users/Mind/Downloads/Chromedriver/chromedriver_mac64 (1)/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/Users/Mind/Downloads/chromedriver-mac-x64/chromedriver");
+			
+			
+			
 			driver = new ChromeDriver();
 			
 		}
 		else if(BrowserName.equals("FF")){
-			System.setProperty("webdriver.chrome.driver", "/Users/Mind/Downloads/chromedriver_mac64/gekodriver");
+			System.setProperty("webdriver.FireFox.driver", "/Users/Mind/Downloads/FirefoxDriver/geckodriver");
 			driver = new FirefoxDriver();
 		}
 		
@@ -49,11 +51,11 @@ public class TestBase {
 //		driver.manage().timeouts().implicitlyWait(TestUtil.Implicit_Wait, TimeUnit.SECONDS);
 		
 		driver.get(prop.getProperty("url"));
-		
+		Thread.sleep(2000);
 	
 		
 		
 	}
-
+	
 }
 
