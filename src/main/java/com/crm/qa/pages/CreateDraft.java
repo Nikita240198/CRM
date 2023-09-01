@@ -37,9 +37,11 @@ public class CreateDraft extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickToCompose(){
+	public   WebElement clickToCompose(){
 		Compose.click();
+		return Compose;
 		
+
 	
 //
 //		Recipient.sendKeys("praveenchouhan@staging.blinkly.com");
@@ -53,6 +55,7 @@ public class CreateDraft extends TestBase {
 //		Assert.assertTrue(CloseDraft.isEnabled(), "Element is not enabled");
 
 	}
+	
 
 	public void SubjectDraft() throws InterruptedException {
 		Compose.click();
