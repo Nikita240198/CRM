@@ -37,7 +37,7 @@ public class CreateDraft extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 
-	public   WebElement clickToCompose(){
+	public WebElement clickToCompose(){
 		Compose.click();
 		return Compose;
 		
